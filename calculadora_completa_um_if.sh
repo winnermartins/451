@@ -13,15 +13,9 @@ read OPERACAO
 
 if [[ $OPERACAO == "+" || $OPERACAO == "SOMA" || $OPERACAO == "soma" ]]; then
 	RESULTADO=$(echo "scale=4; $NUMERO1 + $NUMERO2" | bc)
-fi
-
-
-if [[ $OPERACAO == "-" || $OPERACAO == "SUBTRACAO" || $OPERACAO == "subtracao" ]]; then
+elif [[ $OPERACAO == "-" || $OPERACAO == "SUBTRACAO" || $OPERACAO == "subtracao" ]]; then
 	RESULTADO=$(echo "scale=4; $NUMERO1 - $NUMERO2" | bc)
-fi
-
-
-if [[ $OPERACAO == "*" || $OPERACAO == "MULTIPLICACAO" || $OPERACAO == "multiplicacao" ]]; then
+elif [[ $OPERACAO == "*" || $OPERACAO == "MULTIPLICACAO" || $OPERACAO == "multiplicacao" ]]; then
 	RESULTADO=$(echo "scale=4; $NUMERO1 * $NUMERO2" | bc)
 fi
 
