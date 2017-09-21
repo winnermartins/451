@@ -17,10 +17,7 @@ elif [[ $OPERACAO == "-" || $OPERACAO == "SUBTRACAO" || $OPERACAO == "subtracao"
 	RESULTADO=$(echo "scale=4; $NUMERO1 - $NUMERO2" | bc)
 elif [[ $OPERACAO == "*" || $OPERACAO == "MULTIPLICACAO" || $OPERACAO == "multiplicacao" ]]; then
 	RESULTADO=$(echo "scale=4; $NUMERO1 * $NUMERO2" | bc)
-fi
-
-
-if [[ $OPERACAO == "/" || $OPERACAO == "DIVISAO" || $OPERACAO == "divisao" ]]; then
+elif [[ $OPERACAO == "/" || $OPERACAO == "DIVISAO" || $OPERACAO == "divisao" ]]; then
 	RESULTADO=$(echo "scale=4; $NUMERO1 / $NUMERO2" | bc)
 fi
 
