@@ -9,6 +9,6 @@ else
         echo "Deseja Criá-lo? (y/n)"
         read OPCAO
 		if [[ $OPCAO == "y" || $OPCAO == "Y" ]]; then
-			adduser $USUARIO
+			adduser -m -b /opt/ -c "Novo Usuário" -s /bin/bash $USUARIO
 		fi
 fi
