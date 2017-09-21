@@ -3,12 +3,16 @@
 function realiza_backup(){
 	echo "Diretório que se Deseja realizar Backup (sem barras no início ou final)"
 	read ORIGEM
-	echo "Nome do Backup (bkp_NOME.tar.bz2)"
-	read NOME
-	echo "Destino do Backup"
-	DESTINO="backup"
-	tar -cvjf /backup/bkp_$NOME.tar.bz2 /$ORIGEM/
-	echo "$ORIGEM" > /backup/bkp_$NOME.txt
+	if ! [ -d $ORIGEM ]; then	
+		echo "Nome do Backup (bkp_NOME.tar.bz2)"
+		read NOME
+		echo "Destino do Backup"
+		DESTINO="backup"
+		tar -cvjf /backup/bkp_$NOME.tar.bz2 /$ORIGEM
+		echo "$ORIGEM" > /backup/bkp_$NOME.txt
+	else
+		echo "O diretório não existe"
+	fi
 }
 
 #function restaura_backup(){
