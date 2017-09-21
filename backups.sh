@@ -3,7 +3,7 @@
 function realiza_backup(){
 	echo "Diretório que se Deseja realizar Backup (sem barras no início ou final)"
 	read ORIGEM
-	if ! [ -d $ORIGEM ]; then	
+	if [ -d /$ORIGEM ]; then	
 		echo "Nome do Backup (bkp_NOME.tar.bz2)"
 		read NOME
 		echo "Destino do Backup"
