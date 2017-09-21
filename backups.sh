@@ -1,13 +1,24 @@
 #!/bin/bash
 
 function realiza_backup(){
+	echo "Diretório que se Deseja realizar Backup (sem barras no início ou final)"
+	read ORIGEM
+	echo "Nome do Backup (bkp_NOME.tar.bz2)"
+	read NOME
+	echo "Destino do Backup"
+	DESTINO="backup"
+	tar -cvjf /backup/bkp_$NOME.tar.bz2 /$ORIGEM/
+	echo "$ORIGEM" > /backup/bkp_$NOME.txt
 }
 
-function restaura_backup(){
-}
+#function restaura_backup(){
+#	echo "Nome do Arquivo de Backup (localizado em /backup)"
+#	read BACKUP
+	
+#}
 
-function lista_backup(){
-}
+#function lista_backup(){
+#}
 
 while true
 do
@@ -22,6 +33,7 @@ case $OPCAO in
 1)
 	echo "Função de Realizar Backup"
 	clear
+	realiza_backup
 	exit
 ;;
 2)
